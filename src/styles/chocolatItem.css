@@ -1,0 +1,19 @@
+.chocolatCover{
+    width: 200px;
+    height: auto;
+    border-radius: 5px;
+}
+
+.chocolatItem{
+    margin: 10px;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.articles-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}

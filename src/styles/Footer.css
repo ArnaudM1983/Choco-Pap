@@ -1,0 +1,10 @@
+.footer{
+    background-color: #B65F28;
+}
+
+.reseaux-sociaux .facebook-icon,
+.reseaux-sociaux .instagram-icon,
+.reseaux-sociaux .twitter-icon{
+    height: 40px;
+    width: auto;
+}

@@ -1,0 +1,56 @@
+
+
+.filtres{
+    height: fit-content;
+}
+
+.categories label {
+    display: block; 
+    margin-bottom: 5px;
+  }
+
+.prix label{
+    margin-bottom: 5px;
+    margin-right: 10px;
+    color: rgb(123, 122, 122);
+}
+
+.notes label{
+    margin-bottom: 5px;
+    margin-right: 10px;
+    color: rgb(123, 122, 122);
+}
+
+.categories input{
+    margin-right: 10px;
+}
+
+.articles-list{
+    justify-content: space-around;
+}
+
+.categories label{
+    color: rgb(123, 122, 122);
+}
+
+.chocolatItem{
+    border: solid 0.5px rgb(173, 172, 172);
+    border-radius: 10px;
+}
+
+.bouton-panier{
+    background-color: white;
+    border-radius: 20px;
+    border-width: 1px;
+}
+
+.bouton-panier:hover {
+    background-color: black;
+    color: white;
+  }
+
+  @media (max-width: 767px) {
+    .hidden-filters {
+      display: none;
+    }
+  }

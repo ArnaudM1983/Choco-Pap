@@ -1,0 +1,13 @@
+.slick-slide img{
+    max-width: 100%;
+}
+
+.bouton-boutique{
+    border-radius: 3px;
+    text-decoration: none;
+    background-color: #B65F28;
+    color: white;
+    font-size: 20px;
+    padding: 1em;
+}
+

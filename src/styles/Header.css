@@ -1,0 +1,21 @@
+.header{
+    background-color: #B65F28;
+}
+
+.logo{
+    height: 70px;
+    width: auto;
+}
+
+.lien-acceuil{
+    font-family: Fjalla One;
+}
+
+.lien-boutique{
+    font-family: Fjalla One; 
+}
+
+.logo-panier{
+    height: 30px;
+    width: auto;
+}

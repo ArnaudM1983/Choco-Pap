@@ -1,0 +1,48 @@
+.popup-container {
+    position: fixed;
+    top: 70px; /* Ajustez cette valeur en fonction de la hauteur de votre Header */
+    right: 30px;
+    width: 50%;
+    height: 100%;
+    background-color: white;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+  }
+  
+  .popup {
+    padding: 20px;
+  }
+
+ .popup img{
+    max-width: 150px;
+    height: auto;
+ }
+
+ .button-trash{
+    border-radius: 10px;
+    margin-right: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    border: none;
+}
+
+
+.bouton-panier-popup{
+    width: 300px;
+    font-weight: bold;
+    border-radius: 20px;
+}
+ 
+.quantity-controls button{
+    border: none;
+}
+
+@media screen and (max-width: 768px) {
+    .popup-container {
+      width: 100%;
+      right: 0;
+    }
+  }
