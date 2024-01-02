@@ -58,7 +58,19 @@ function Boutique({ cart, setCart }) {
   }
 
   function addToCart(product) {
-    setCart([...cart, product]);
+    const existingProduct = cart.find((item) => item.id === product.id);
+  
+    if (existingProduct) {
+      // Si le produit est déjà dans le panier, mettez à jour la quantité
+      setCart((prevCart) =>
+        prevCart.map((item) =>
+          item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+        )
+      );
+    } else {
+      // Si le produit n'est pas encore dans le panier, ajoutez-le avec une quantité initiale de 1
+      setCart([...cart, { ...product, quantity: 1 }]);
+    }
   }
 
 

@@ -13,6 +13,7 @@ function DetailProduit({ cart, setCart }) {
     setQuantity(1);
   }, []);
 
+
   const handleQuantityChange = (newQuantity) => {
     setQuantity(newQuantity);
   };
