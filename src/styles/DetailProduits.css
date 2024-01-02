@@ -3,3 +3,14 @@ img{
     height: auto;
     border-radius: 5px;
 }
+
+.bouton-panier-detail{
+    background-color: white;
+    border-radius: 20px;
+    border-width: 1px;
+}
+
+.bouton-panier-detail:hover {
+    background-color: black;
+    color: white;
+  }
