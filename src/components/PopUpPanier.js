@@ -17,12 +17,21 @@ function PopUpPanier({ cart, setCart, removeFromCart, handleClose }) {
       ...prevQuantities,
       [productId]: newQuantity,
     }));
+    const updatedCart = cart.map((product) =>
+      product.id === productId ? { ...product, quantity: newQuantity } : product
+    );
+    setCart(updatedCart);
   };
 
   const resetCart = () => {
     setProductQuantities({});
     setCart([]);
   };
+
+  const calculateTotal = () => {
+    return cart.reduce((total, product) => total + product.price * product.quantity, 0);
+  };
+
 
   return (
     <div className="popup-container">
@@ -59,12 +68,7 @@ function PopUpPanier({ cart, setCart, removeFromCart, handleClose }) {
         <hr></hr>
         <div className="footer-panier my-5 py-5 d-flex flex-column text-center">
           <p className="fw-bold mb-5">
-            TOTAL :{' '}
-            {cart.reduce(
-    (total, product) => total + product.price * product.quantity,
-    0
-  )}{' '}
-  €
+            TOTAL : {calculateTotal()} €
           </p>
           <button className="bouton-panier-popup mb-3 py-3 mx-auto" onClick={resetCart}>Réinitialiser le panier</button>
           <button className="bouton-panier-popup py-3 mx-auto">Valider le panier</button>
