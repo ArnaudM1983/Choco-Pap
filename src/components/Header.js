@@ -10,19 +10,23 @@ function Header({ cart, setCart }) {
   const [showPanier, setShowPanier] = useState(false);
   const [isFixed, setIsFixed] = useState(false);
 
+  // Fonction pour gérer le clic sur l'icône du panier
   const handlePanierClick = () => {
     setShowPanier(!showPanier);
   };
 
+  // Fonction pour fermer le panier
   const handleClosePanier = () => {
     setShowPanier(false);
   };
 
+  // Fonction pour retirer un produit du panier
   const removeFromCart = (product) => {
     const updatedCart = cart.filter((item) => item.id !== product.id);
     setCart(updatedCart);
   };
 
+  // useEffect pour gérer le positionnement fixe du header lors du défilement
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;

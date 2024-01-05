@@ -3,15 +3,15 @@ import '../styles/PopUpPanier.css'
 import { FaTrash, FaTimes } from 'react-icons/fa'
 
 function PopUpPanier({ cart, setCart, removeFromCart, handleClose }) {
-
+  // State pour stocker les quantités des produits dans le panier
   const [productQuantities, setProductQuantities] = useState(
     cart.reduce((quantities, product) => {
-      quantities[product.id] = product.quantity; // Utilisez la quantité du produit
+      quantities[product.id] = product.quantity; // Utilise la quantité du produit
       return quantities;
     }, {})
   );
 
-
+  // Fonction pour mettre à jour la quantité d'un produit dans le panier
   const updateQuantity = (productId, newQuantity) => {
     setProductQuantities((prevQuantities) => ({
       ...prevQuantities,
@@ -23,15 +23,16 @@ function PopUpPanier({ cart, setCart, removeFromCart, handleClose }) {
     setCart(updatedCart);
   };
 
+  // Fonction pour réinitialiser complètement le panier
   const resetCart = () => {
     setProductQuantities({});
     setCart([]);
   };
 
+  // Fonction pour calculer le total du panier
   const calculateTotal = () => {
     return cart.reduce((total, product) => total + product.price * product.quantity, 0);
   };
-
 
   return (
     <div className="popup-container">

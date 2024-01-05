@@ -5,39 +5,38 @@ import '../styles/DetailProduits.css'
 
 function DetailProduit({ cart, setCart }) {
   const { productId } = useParams();
+  // Recherche le produit dans la liste
   const produit = chocolatList.find((article) => article.id === productId);
 
+  // State pour gérer la quantité du produit à ajouter au panier
   const [quantity, setQuantity] = useState(1);
 
+  // useEffect pour réinitialiser la quantité à 1
   useEffect(() => {
     setQuantity(1);
   }, []);
 
-
+  // Fonction pour mettre à jour la quantité
   const handleQuantityChange = (newQuantity) => {
     setQuantity(newQuantity);
   };
 
+  // Fonction pour ajouter le produit au panier
   const addToCart = () => {
     const updatedCart = [...cart];
     const existingProductIndex = updatedCart.findIndex((item) => item.id === produit.id);
 
     if (existingProductIndex !== -1) {
-      // Si le produit existe déjà dans le panier, mettez à jour la quantité
+      // Si le produit existe déjà dans le panier, met à jour la quantité
       updatedCart[existingProductIndex].quantity += quantity;
     } else {
-      // Si le produit n'existe pas encore dans le panier, ajoutez-le
+      // Si le produit n'existe pas encore dans le panier, ajoute le produit
       updatedCart.push({ ...produit, quantity });
     }
 
+    // Met à jour le panier avec la nouvelle liste
     setCart(updatedCart);
   };
-
-
-  if (!produit) {
-    return <p>Produit non trouvé</p>;
-  }
-
 
   return (
     <div className="detail-produit mx-4 my-3">

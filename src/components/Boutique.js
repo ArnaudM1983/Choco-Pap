@@ -6,12 +6,17 @@ import { Link } from 'react-router-dom';
 
 
 function Boutique({ cart, setCart }) {
+  // State pour gérer les filtres
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [minPrice, setMinPrice] = useState(1);
   const [maxPrice, setMaxPrice] = useState(20);
   const [minNote, setMinNote] = useState(1);
   const [maxNote, setMaxNote] = useState(5);
+
+  // State pour stocker les produits filtrés
   const [filteredChocolates, setFilteredChocolates] = useState([]);
+
+  // State pour afficher ou masquer les filtres
   const [showCategories, setShowCategories] = useState(false);
   const [showPrice, setShowPrice] = useState(false);
   const [showNotes, setShowNotes] = useState(false);
@@ -32,7 +37,7 @@ function Boutique({ cart, setCart }) {
     setFilteredChocolates(filtered);
   }, [selectedCategories, minPrice, maxPrice, minNote, maxNote]);
 
-
+  // Fonction pour changer l'état des catégories sélectionnées
   function handleCategoryChange(category) {
     if (selectedCategories.includes(category)) {
       setSelectedCategories(selectedCategories.filter((cat) => cat !== category));
@@ -41,6 +46,7 @@ function Boutique({ cart, setCart }) {
     }
   }
 
+  // Fonctions pour changer l'état des filtres de prix et de notes
   function handleMinPriceChange(event) {
     setMinPrice(Number(event.target.value));
   }
@@ -57,18 +63,19 @@ function Boutique({ cart, setCart }) {
     setMaxNote(Number(event.target.value));
   }
 
+  // Fonction pour ajouter un produit au panier
   function addToCart(product) {
     const existingProduct = cart.find((item) => item.id === product.id);
 
     if (existingProduct) {
-      // Si le produit est déjà dans le panier, mettez à jour la quantité
+      // Si le produit est déjà dans le panier, met à jour la quantité
       setCart((prevCart) =>
         prevCart.map((item) =>
           item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
         )
       );
     } else {
-      // Si le produit n'est pas encore dans le panier, ajoutez-le avec une quantité initiale de 1
+      // Si le produit n'est pas encore dans le panier, ajoute avec une quantité initiale de 1
       setCart([...cart, { ...product, quantity: 1 }]);
     }
   }
@@ -161,7 +168,6 @@ function Boutique({ cart, setCart }) {
                   Liqueur
                 </label>
               </div>
-              {/* Ajoutez d'autres cases à cocher pour chaque catégorie */}
             </div>
             <hr></hr>
             <div className='prix'>

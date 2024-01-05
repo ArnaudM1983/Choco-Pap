@@ -10,6 +10,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 
 function App() {
+  // State pour gérer le panier d'achats
   const [cart, setCart] = useState([]);
 
   return (
