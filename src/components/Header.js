@@ -26,7 +26,7 @@ function Header({ cart, setCart }) {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      const triggerPosition = 100; // Ajustez la position de déclenchement selon vos préférences
+      const triggerPosition = 100; 
 
       if (scrollPosition > triggerPosition) {
         setIsFixed(true);
@@ -61,11 +61,9 @@ function Header({ cart, setCart }) {
           <nav className="collapse navbar-collapse" id="navbar-content">
             <ul className="navbar-nav ms-auto d-flex align-items-sm-center">
               <li className="nav-item">
-                {/* Lien vers Accueil*/}
                 <NavLink to="/" className="lien-acceuil text-decoration-none text-white me-3">Acceuil</NavLink>
               </li>
               <li className="nav-item">
-                {/* Lien vers Boutique*/}
                 <NavLink to="/boutique" className="lien-boutique text-decoration-none text-white me-3">Boutique</NavLink>
               </li>
             </ul>
@@ -82,7 +80,6 @@ function Header({ cart, setCart }) {
         </header>
         {showPanier && <PopUpPanier cart={cart} setCart={setCart} removeFromCart={removeFromCart} handleClose={handleClosePanier} />}
       </>
-
     </div>
   )
 }

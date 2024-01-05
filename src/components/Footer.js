@@ -1,7 +1,6 @@
 import React from 'react';
 import '../styles/Footer.css'
-import {FaFacebook, FaInstagram, FaTwitter} from 'react-icons/fa'
-
+import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa'
 
 function Footer() {
     return (
@@ -27,16 +26,19 @@ function Footer() {
                             </p>
                         </div>
                         <div className="col-12 col-md-4 reseaux-sociaux d-flex align-items-center justify-content-evenly pb-3">
-                            <FaFacebook className="facebook-icon" />
-                            <FaInstagram className="instagram-icon" />
-                            <FaTwitter className="twitter-icon" />
+                            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className='text-reset'>
+                                <FaFacebook className="facebook-icon" /></a>
+                            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className='text-reset'>
+                                <FaInstagram className="instagram-icon" /></a>
+                            <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" className='text-reset'>
+                            <   FaTwitter className="twitter-icon" /></a>
                         </div>
                     </div>
                 </footer>
             </>
         </div>
 
-                )
+    )
 }
 
 export default Footer

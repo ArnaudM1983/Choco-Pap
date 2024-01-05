@@ -12,22 +12,20 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 function App() {
   const [cart, setCart] = useState([]);
 
-    return (
-        <div>
-            <BrowserRouter>
-            <Header cart={cart} setCart={setCart} />
+  return (
+    <div>
+      <BrowserRouter>
+        <Header cart={cart} setCart={setCart} />
         <Routes>
           <Route path="/" element={<Acceuil />} />
           <Route path="/boutique" element={<Boutique cart={cart} setCart={setCart} />} />
           <Route path="/boutique/:productId" element={<DetailProduit cart={cart} setCart={setCart} />} />
         </Routes>
-            </BrowserRouter>
-            <Footer />
-        </div>
-      
-    )
-        
-}
+      </BrowserRouter>
+      <Footer />
+    </div>
+  )
 
+}
 
 export default App

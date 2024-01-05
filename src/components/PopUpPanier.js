@@ -10,7 +10,7 @@ function PopUpPanier({ cart, setCart, removeFromCart, handleClose }) {
       return quantities;
     }, {})
   );
-  
+
 
   const updateQuantity = (productId, newQuantity) => {
     setProductQuantities((prevQuantities) => ({
@@ -52,7 +52,6 @@ function PopUpPanier({ cart, setCart, removeFromCart, handleClose }) {
             <div className='me-3 quantity-controls d-flex flex-column flex-sm-row'>
               <p className="fw-bold ms-2 mt-3">{product.title}</p>
               <p className='ms-2 mt-3'>{product.price} €</p>
-
               <div className='d-flex flex-row align-items-center ms-2'>
                 <button onClick={() => updateQuantity(product.id, productQuantities[product.id] - 1)}>
                   -

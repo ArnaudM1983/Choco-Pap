@@ -59,7 +59,7 @@ function Boutique({ cart, setCart }) {
 
   function addToCart(product) {
     const existingProduct = cart.find((item) => item.id === product.id);
-  
+
     if (existingProduct) {
       // Si le produit est déjà dans le panier, mettez à jour la quantité
       setCart((prevCart) =>
@@ -227,20 +227,18 @@ function Boutique({ cart, setCart }) {
           <div className="articles-list col-md-8 pe-3">
             {filteredChocolates.map((article) => (
               <div key={article.id} className="chocolatItem text-center mb-5 py-4 px-4">
-              <Link to={`/boutique/${article.id}`} className="lien-detail">
-              <img className="chocolatCover" src={article.image} alt={article.title} />
-                <h5 className='mx-auto fw-bold mt-5'>{article.title}</h5>
-                <p className='mx-auto'>Note : {article.note}</p>
-                <p className='mx-auto fw-bold'>{article.price} €</p>
-              </Link>
-              <button className='bouton-panier mx-auto pt-2 pb-2 px-3 ' onClick={() => addToCart(article)}>Ajouter au panier</button>
-            </div>
+                <Link to={`/boutique/${article.id}`} className="lien-detail">
+                  <img className="chocolatCover" src={article.image} alt={article.title} />
+                  <h5 className='mx-auto fw-bold mt-5'>{article.title}</h5>
+                  <p className='mx-auto'>Note : {article.note}</p>
+                  <p className='mx-auto fw-bold'>{article.price} €</p>
+                </Link>
+                <button className='bouton-panier mx-auto pt-2 pb-2 px-3 ' onClick={() => addToCart(article)}>Ajouter au panier</button>
+              </div>
             ))}
           </div>
         </div>
-
       </div>
-
     </div>
 
   );
