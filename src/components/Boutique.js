@@ -147,7 +147,6 @@ function Boutique({ cart, setCart }) {
                   Liqueur
                 </label>
               </div>
-              {/* Ajoutez d'autres cases à cocher pour chaque catégorie */}
             </div>
             <hr></hr>
             <div className='prix'>
