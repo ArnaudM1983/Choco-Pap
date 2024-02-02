@@ -26,7 +26,7 @@ function Header({ cart, setCart }) {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      const triggerPosition = 100; // Ajustez la position de déclenchement selon vos préférences
+      const triggerPosition = 100; 
 
       if (scrollPosition > triggerPosition) {
         setIsFixed(true);
