@@ -6,7 +6,7 @@ function PopUpPanier({ cart, setCart, removeFromCart, handleClose }) {
 
   const [productQuantities, setProductQuantities] = useState(
     cart.reduce((quantities, product) => {
-      quantities[product.id] = 1; // Initialisez la quantité à 1 pour chaque produit
+      quantities[product.id] = 1; // Initialise la quantité à 1 pour chaque produit
       return quantities;
     }, {})
   );
