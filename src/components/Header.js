@@ -62,7 +62,7 @@ function Header({ cart, setCart }) {
             <ul className="navbar-nav ms-auto d-flex align-items-sm-center">
               <li className="nav-item">
                 {/* Lien vers Accueil*/}
-                <NavLink to="/" className="lien-acceuil text-decoration-none text-white me-3">Acceuil</NavLink>
+                <NavLink to="/acceuil" className="lien-acceuil text-decoration-none text-white me-3">Acceuil</NavLink>
               </li>
               <li className="nav-item">
                 {/* Lien vers Boutique*/}
